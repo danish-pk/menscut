@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Herrenfriseur & Barbershop Berlin-Neukölln | Men’s Cut by Taskin</title>
     <meta name="description" content="Men’s Cut by Taskin – Herrenfriseur & Barbershop in Berlin-Neukölln. Herrenhaarschnitt, Skin Fade, Taper Fade, Bartpflege, traditionelle Rasur und Kinderhaarschnitt." />
+    <link rel="canonical" href="https://menscutbarber.de/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -982,6 +983,47 @@
             gap: 60px;
         }
 
+        /* ── GALLERY SECTION ── */
+        .gallery-section {
+            background: var(--white);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 1 / 1;
+            position: relative;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s;
+            display: block;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-item .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, .6);
+            color: #fff;
+            padding: 8px 12px;
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
         /* ── REVEAL ANIMATIONS ── */
         .reveal {
             opacity: 0;
@@ -1060,6 +1102,9 @@
             .value-grid {
                 grid-template-columns: 1fr;
             }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
             .container {
                 padding: 0 24px;
             }
@@ -1113,6 +1158,10 @@
                 width: 28px;
                 margin: 0 0 10px 0;
             }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
             .container {
                 padding: 0 16px;
             }
@@ -1128,7 +1177,7 @@
     <nav id="navbar">
         <a class="nav-logo" onclick="showPage('home')">
             <img src="images/logo.png" alt="Men's Cut by Taskin Logo" />
-            <div class="nav-logo-text">Men's Cut by Taskin <span>Berlin · Barbershop</span></div>
+            <div class="nav-logo-text">Men's Cut by Taskin <span>Berlin-Neukölln · Barbershop</span></div>
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a onclick="showPage('home')" class="active" id="nav-home" data-i18n="nav.home">Home</a></li>
@@ -1167,9 +1216,7 @@
             <div class="hero-bg"></div>
             <div class="hero-content">
                 <div class="hero-eyebrow" data-i18n="hero.eyebrow">Crafting Timeless Style</div>
-                <!-- UPDATED H1: Herrenfriseur & Barbershop in Berlin-Neukölln -->
                 <h1 class="hero-h1" data-i18n="hero.title">Herrenfriseur & Barbershop in <em>Berlin-Neukölln</em></h1>
-                <!-- ADDED SUBTEXT directly under H1 -->
                 <p class="hero-sub" data-i18n="hero.sub">Professionelle Herrenhaarschnitte, Skin Fades, Taper Fades, Bartpflege und traditionelle Rasuren in der Anzengruberstraße 4 in Berlin-Neukölln.</p>
                 <a href="tel:+4930680530010" class="hero-btn" data-i18n="hero.btn">Call to Book Now</a>
             </div>
@@ -1186,20 +1233,19 @@
                         <div class="section-eyebrow" data-i18n="about.eyebrow">About Us</div>
                         <h2 class="section-title" data-i18n="about.title">Men's Cut by Taskin</h2>
                         <div class="divider"></div>
-                        <!-- ADDED "Seit 2013 in Berlin" -->
                         <p><strong>Seit 2013 in Berlin</strong> – wir sind leidenschaftliche Barbiere mit tiefer Expertise in allen Bereichen unseres Handwerks. Unser Erfolg kommt von jahrelanger Erfahrung mit einem vielfältigen Kundenkreis im Herzen Berlins.</p>
                         <p data-i18n="about.p2">Wir sind bestrebt, alle unsere Kunden zufrieden zu stellen, indem wir aufmerksam zuhören und den besten Stil vorschlagen, der am besten zu Ihnen passt – zeitlose Barber-Tradition verbunden mit moderner Technik.</p>
                         <div class="stats-row">
-                            <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label" data-i18n="about.stat1">Rating</div></div>
-                            <div class="stat"><div class="stat-num">150+</div><div class="stat-label" data-i18n="about.stat2">Reviews</div></div>
-                            <div class="stat"><div class="stat-num">2k+</div><div class="stat-label" data-i18n="about.stat3">Happy Clients</div></div>
+                            <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label" data-i18n="about.stat1">Google Rating</div></div>
+                            <div class="stat"><div class="stat-num">4.9</div><div class="stat-label" data-i18n="about.stat2">Google Rating</div></div>
+                            <div class="stat"><div class="stat-num">4.9</div><div class="stat-label" data-i18n="about.stat3">Google Rating</div></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SERVICES PREVIEW — UPDATED with new service content -->
+        <!-- SERVICES PREVIEW -->
         <section class="services-section">
             <div class="container">
                 <div style="text-align:center" class="reveal">
@@ -1209,7 +1255,7 @@
                     <p style="max-width:550px;margin:0 auto;color:var(--text-light);line-height:1.8" data-i18n="services.desc">A full range of men's barber services — from modern haircuts to traditional shaves and beard care, to emphasise your style and confidence.</p>
                 </div>
                 <div class="services-grid">
-                    <!-- Service 1: Herrenhaarschnitt Berlin-Neukölln -->
+                    <!-- Service 1 -->
                     <div class="service-card reveal">
                         <img src="https://media.istockphoto.com/id/965168640/photo/handsome-young-man-getting-a-haircut.jpg?s=170667a&w=0&k=20&c=s1_r5ZPgLfu60mGZXLYErav_00UrtOE89yXC0L7fVUE=" alt="Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
                         <div class="service-card-content">
@@ -1218,7 +1264,7 @@
                             <p data-i18n="services.haircut.desc">Professionelle Herrenhaarschnitte in Berlin-Neukölln – von klassischen Schnitten bis zu modernen Styles. Wir beraten individuell und schneiden passend zu Haarstruktur, Gesichtsform und gewünschtem Look.</p>
                         </div>
                     </div>
-                    <!-- Service 2: Skin Fade & Fade Cut -->
+                    <!-- Service 2 -->
                     <div class="service-card reveal">
                         <img src="https://i.ibb.co/CswdQqrm/d2470ec9-198c-40f9-8137-4268764ebeec.png" alt="Skin Fade und Fade Cut in Berlin-Neukölln" loading="lazy" />
                         <div class="service-card-content">
@@ -1227,7 +1273,7 @@
                             <p data-i18n="services.shave.desc">Präzise Fade Cuts und Skin Fades mit sauberen Übergängen und exakten Konturen. Wir bieten unter anderem Low Fade, Mid Fade, High Fade und moderne Taper-Fade-Styles.</p>
                         </div>
                     </div>
-                    <!-- Service 3: Bartpflege & Bartkonturen -->
+                    <!-- Service 3 -->
                     <div class="service-card reveal">
                         <img src="https://img.freepik.com/free-photo/handsome-man-cutting-beard-barber-shop-salon_1303-20931.jpg" alt="Bartpflege und Bartkonturen in Berlin-Neukölln" loading="lazy" />
                         <div class="service-card-content">
@@ -1236,7 +1282,7 @@
                             <p data-i18n="services.beard.desc">Professionelles Barttrimmen, Bartstyling und präzise Bartkonturen. Wir bringen den Bart passend zur Gesichtsform in Form und sorgen für ein sauberes, gepflegtes Ergebnis.</p>
                         </div>
                     </div>
-                    <!-- Service 4: Traditionelle Rasur -->
+                    <!-- Service 4 -->
                     <div class="service-card reveal">
                         <img src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg=" alt="Traditionelle Rasur in Berlin-Neukölln" loading="lazy" />
                         <div class="service-card-content">
@@ -1245,7 +1291,7 @@
                             <p>Traditionelle Rasur mit professioneller Barber-Technik, heißen Tüchern und sorgfältiger Vorbereitung für eine gründliche und angenehme Rasur.</p>
                         </div>
                     </div>
-                    <!-- Service 5: Kinderhaarschnitt in Berlin-Neukölln -->
+                    <!-- Service 5 -->
                     <div class="service-card reveal">
                         <img src="https://img.freepik.com/premium-photo/handsome-boy-getting-his-hair-beard-cut-barber-shop-barber-shop-rear-view_494741-47404.jpg" alt="Kinderhaarschnitt in Berlin-Neukölln" loading="lazy" />
                         <div class="service-card-content">
@@ -1258,7 +1304,52 @@
             </div>
         </section>
 
-        <!-- PRICE LIST SECTION (unchanged) -->
+        <!-- ====== NEW: GALLERY SECTION "Unsere Haarschnitte & Styles" ====== -->
+        <section class="gallery-section">
+            <div class="container">
+                <div style="text-align:center" class="reveal">
+                    <div class="section-eyebrow">Galerie</div>
+                    <h2 class="section-title">Unsere Haarschnitte & Styles</h2>
+                    <div class="divider center"></div>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item reveal">
+                        <img src="https://i.ibb.co/4T9pGxKz/skin-fade-berlin.jpg" alt="Skin Fade haircut in Berlin-Neukölln" loading="lazy" />
+                        <div class="gallery-label">Skin Fade</div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="https://i.ibb.co/c3mP5FFZ/low-fade-berlin.jpg" alt="Low Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                        <div class="gallery-label">Low Fade</div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="https://i.ibb.co/m8C0k3kq/mid-fade-berlin.jpg" alt="Mid Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                        <div class="gallery-label">Mid Fade</div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="https://i.ibb.co/MsNsPTS0/high-fade-berlin.jpg" alt="High Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                        <div class="gallery-label">High Fade</div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="https://i.ibb.co/Xzqgh05d/taper-fade-berlin.jpg" alt="Taper Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                        <div class="gallery-label">Taper Fade</div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="https://i.ibb.co/XjFMhYK7/classic-haircut-berlin.jpg" alt="Classic Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                        <div class="gallery-label">Classic Herrenhaarschnitt</div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="https://i.ibb.co/RggH00sC/haircut-beard-berlin.jpg" alt="Haircut and Beard in Berlin-Neukölln" loading="lazy" />
+                        <div class="gallery-label">Haircut & Beard</div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="https://i.ibb.co/G90DTnrp/modern-fade-berlin.jpg" alt="Modern Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                        <div class="gallery-label">Modern Fade</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICE LIST SECTION -->
         <section class="pricelist-section">
             <div class="container">
                 <div style="text-align:center" class="reveal">
@@ -1268,7 +1359,6 @@
                     <p style="max-width:550px;margin:0 auto;color:var(--text-light);line-height:1.8" data-i18n="pricelist.desc">Fair and transparent pricing for all our services — quality grooming at honest rates.</p>
                 </div>
                 <div class="pricelist-grid">
-                    <!-- 1. Wash, Haircut, Blow Dry & Beard -->
                     <div class="pricelist-card reveal">
                         <img src="https://tse1.mm.bing.net/th/id/OIP.aTW35VdMx1V-sFSq5LXjLwHaE8?r=0&cb=thfc1falcon2&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Wash, Haircut, Blow Dry & Beard" loading="lazy" />
                         <div class="pricelist-card-content">
@@ -1281,7 +1371,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 2. Haircut -->
                     <div class="pricelist-card reveal">
                         <img src="https://www.moderngentlemanmagazine.com/wp-content/uploads/2025/06/Sling-Fade-Twist.jpeg" alt="Haircut" loading="lazy" />
                         <div class="pricelist-card-content">
@@ -1294,7 +1383,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 3. Wash, Haircut & Blow Dry -->
                     <div class="pricelist-card reveal">
                         <img src="https://thumbs.dreamstime.com/b/young-dark-haired-guy-indian-asian-appearance-barber-shop-black-chair-barber-washes-his-head-shampoo-175891551.jpg" alt="Wash, Haircut & Blow Dry" loading="lazy" />
                         <div class="pricelist-card-content">
@@ -1307,20 +1395,18 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 4. Beard Trim -->
                     <div class="pricelist-card reveal">
                         <img src="https://firstandmaneaz.com/wp-content/uploads/2025/01/Trim-a-Beard.jpg" alt="Beard Trim" loading="lazy" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
-                            <h3 data-i18n="pricelist.s4.title">Beard Trim</h3>
-                            <p class="pricelist-desc" data-i18n="pricelist.s4.desc">Clean and precise beard trimming for a sharp and polished appearance.</p>
+                            <h3 data-i18n="pricelist.s4.title">Bart Rasur</h3>
+                            <p class="pricelist-desc" data-i18n="pricelist.s4.desc">Professionelle Bartrasur mit sorgfältiger Vorbereitung, sauberen Konturen und angenehmem, gepflegtem Ergebnis.</p>
                             <div class="pricelist-price">
                                 <span data-i18n="pricelist.s4.price">€12</span>
                                 <span class="price-label" data-i18n="pricelist.price_label">Price</span>
                             </div>
                         </div>
                     </div>
-                    <!-- 5. Kids Haircut (up to 6 years) -->
                     <div class="pricelist-card reveal">
                         <img src="https://img.freepik.com/premium-photo/handsome-boy-getting-his-hair-beard-cut-barber-shop-barber-shop-rear-view_494741-47404.jpg" alt="Kids Haircut" loading="lazy" />
                         <div class="pricelist-card-content">
@@ -1333,7 +1419,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 6. Honey Wax (per zone) -->
                     <div class="pricelist-card reveal">
                         <img src="https://baldandbeards.com/wp-content/uploads/beard-waxing-768x512.jpg" alt="Honey Wax" loading="lazy" />
                         <div class="pricelist-card-content">
@@ -1350,18 +1435,18 @@
             </div>
         </section>
 
-        <!-- REVIEWS (unchanged) -->
+        <!-- REVIEWS -->
         <section class="reviews-section">
             <div class="container">
                 <div class="reviews-header reveal">
                     <div>
-                        <div class="section-eyebrow" data-i18n="reviews.eyebrow">100% Good Reviews</div>
+                        <div class="section-eyebrow" data-i18n="reviews.eyebrow">Google Reviews</div>
                         <h2 class="section-title" data-i18n="reviews.title">Customers Say &hellip;</h2>
                     </div>
                     <div style="text-align:right">
                         <div class="rating-big">4.9</div>
                         <div class="stars" style="font-size:1.2rem;margin:6px 0;color:#fbbc04;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="rating-sub" data-i18n="reviews.sub">168 Google Reviews</div>
+                        <div class="rating-sub" data-i18n="reviews.sub">Google Rating</div>
                     </div>
                 </div>
                 <div class="reviews-grid">
@@ -1369,7 +1454,7 @@
                         <div class="reviewer">
                             <div class="reviewer-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocJHEZfve12A2l4my3ti9UdXcMw-rFytiGCxvqjfWJndaMJtKw=w54-h54-p-rp-mo-br100" alt="Eshal" /></div>
                             <div class="reviewer-info">
-                                <div class="reviewer-name">Eshal Eshal Malik</div>
+                                <div class="reviewer-name">Eshal Malik</div>
                                 <div class="reviewer-date">Dec 2025</div>
                             </div>
                             <div class="reviewer-google">
@@ -1453,7 +1538,7 @@
             </div>
         </section>
 
-        <!-- CONTACT PREVIEW (unchanged) -->
+        <!-- CONTACT PREVIEW -->
         <section class="contact-section">
             <div class="container">
                 <div class="contact-grid">
@@ -1485,7 +1570,7 @@
                                     <polyline points="12 6 12 12 16 14" />
                                 </svg>
                             </div>
-                            <div><div class="contact-label" data-i18n="contact.hours.label">Opening Hours</div><div class="contact-value" data-i18n="contact.hours.value">Mon&ndash;Fri: 9:00 AM &ndash; 7:00 PM<br />Saturday: 9:00 AM &ndash; 7:00 PM<br />Sunday: Closed</div></div>
+                            <div><div class="contact-label" data-i18n="contact.hours.label">Opening Hours</div><div class="contact-value" data-i18n="contact.hours.value">Mon&ndash;Fri: 09:00 &ndash; 19:00<br />Saturday: 09:00 &ndash; 19:00<br />Sunday: Closed</div></div>
                         </div>
                         <div class="contact-label" style="margin-bottom:12px" data-i18n="contact.follow">Follow Us</div>
                         <div class="social-row">
@@ -1554,9 +1639,9 @@
                     <h2 class="section-title light reveal" data-i18n="about-page.stats.title">4.9 ★ on Google</h2>
                     <div class="divider center reveal"></div>
                     <div class="stats-row reveal" style="justify-content:center;margin-top:0">
-                        <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label" style="color:rgba(255,255,255,.5)" data-i18n="about-page.stats.stat1">Average Rating</div></div>
-                        <div class="stat"><div class="stat-num">150+</div><div class="stat-label" style="color:rgba(255,255,255,.5)" data-i18n="about-page.stats.stat2">Google Reviews</div></div>
-                        <div class="stat"><div class="stat-num">2k+</div><div class="stat-label" style="color:rgba(255,255,255,.5)" data-i18n="about-page.stats.stat3">Happy Clients</div></div>
+                        <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label" style="color:rgba(255,255,255,.5)" data-i18n="about-page.stats.stat1">Google Rating</div></div>
+                        <div class="stat"><div class="stat-num">4.9</div><div class="stat-label" style="color:rgba(255,255,255,.5)" data-i18n="about-page.stats.stat2">Google Rating</div></div>
+                        <div class="stat"><div class="stat-num">4.9</div><div class="stat-label" style="color:rgba(255,255,255,.5)" data-i18n="about-page.stats.stat3">Google Rating</div></div>
                     </div>
                 </div>
             </section>
@@ -1565,7 +1650,7 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- SERVICES PAGE (UPDATED with all service terms)               -->
+    <!-- SERVICES PAGE                                                 -->
     <!-- ============================================================ -->
     <div class="page" id="page-services">
         <div>
@@ -1586,7 +1671,6 @@
                         <p style="max-width:580px;margin:0 auto;color:var(--text-light);line-height:1.9" data-i18n="services-page.desc">Wir bieten ein umfassendes Angebot an Barber-Dienstleistungen für Männer – von modernen und klassischen Haarschnitten über traditionelle Rasuren bis hin zur Bartpflege.</p>
                     </div>
                     <div class="services-list">
-                        <!-- Service 1: Herrenhaarschnitt -->
                         <div class="service-item reveal">
                             <div class="service-item-img"><img src="https://media.istockphoto.com/id/965168640/photo/handsome-young-man-getting-a-haircut.jpg?s=170667a&w=0&k=20&c=s1_r5ZPgLfu60mGZXLYErav_00UrtOE89yXC0L7fVUE=" alt="Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" /></div>
                             <div class="service-item-text">
@@ -1597,7 +1681,6 @@
                                 <p>Ob Sie einen klassischen Taper, Fade, Pompadour oder Undercut bevorzugen – wir streben danach, Ihre Individualität hervorzuheben und Styling-Empfehlungen zu geben, damit Sie immer makellos aussehen.</p>
                             </div>
                         </div>
-                        <!-- Service 2: Skin Fade & Fade Cut -->
                         <div class="service-item reverse reveal">
                             <div class="service-item-img"><img src="https://i.ibb.co/CswdQqrm/d2470ec9-198c-40f9-8137-4268764ebeec.png" alt="Skin Fade und Fade Cut in Berlin-Neukölln" loading="lazy" /></div>
                             <div class="service-item-text">
@@ -1608,7 +1691,6 @@
                                 <p>Unsere erfahrenen Barbiere beherrschen alle Fade-Techniken und schaffen einen perfekten Übergang von der Haut bis zum Deckhaar – für einen modernen und gepflegten Look.</p>
                             </div>
                         </div>
-                        <!-- Service 3: Bartpflege & Bartkonturen -->
                         <div class="service-item reveal">
                             <div class="service-item-img"><img src="https://img.freepik.com/free-photo/handsome-man-cutting-beard-barber-shop-salon_1303-20931.jpg" alt="Bartpflege und Bartkonturen in Berlin-Neukölln" loading="lazy" /></div>
                             <div class="service-item-text">
@@ -1619,7 +1701,6 @@
                                 <p>Unser Ziel ist es, Ihre Individualität hervorzuheben und Pflegeempfehlungen zu geben, damit Ihr Bart immer makellos aussieht.</p>
                             </div>
                         </div>
-                        <!-- Service 4: Traditionelle Rasur -->
                         <div class="service-item reverse reveal">
                             <div class="service-item-img"><img src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg=" alt="Traditionelle Rasur in Berlin-Neukölln" loading="lazy" /></div>
                             <div class="service-item-text">
@@ -1630,7 +1711,6 @@
                                 <p>Die Kombination aus heißen Tüchern, aromatischen Ölen und aufmerksamer Pflege garantiert ein Gefühl von Frische und Erneuerung, sodass Sie sich rundum wohlfühlen.</p>
                             </div>
                         </div>
-                        <!-- Service 5: Kinderhaarschnitt -->
                         <div class="service-item reveal">
                             <div class="service-item-img"><img src="https://img.freepik.com/premium-photo/handsome-boy-getting-his-hair-beard-cut-barber-shop-barber-shop-rear-view_494741-47404.jpg" alt="Kinderhaarschnitt in Berlin-Neukölln" loading="lazy" /></div>
                             <div class="service-item-text">
@@ -1641,7 +1721,6 @@
                                 <p>Unsere erfahrenen Barbiere gehen einfühlsam auf die Bedürfnisse der jungen Kunden ein und sorgen für einen stressfreien und angenehmen Besuch.</p>
                             </div>
                         </div>
-                        <!-- Service 6: Waschen, Schneiden & Föhnen -->
                         <div class="service-item reverse reveal">
                             <div class="service-item-img"><img src="https://thumbs.dreamstime.com/b/young-dark-haired-guy-indian-asian-appearance-barber-shop-black-chair-barber-washes-his-head-shampoo-175891551.jpg" alt="Waschen, Schneiden und Föhnen in Berlin-Neukölln" loading="lazy" /></div>
                             <div class="service-item-text">
@@ -1652,7 +1731,6 @@
                                 <p>Dieser Service ist ideal für alle, die sich rundum verwöhnen lassen und gleichzeitig einen präzisen, modernen Haarschnitt wünschen.</p>
                             </div>
                         </div>
-                        <!-- Service 7: Honigwachs / Gesichtsenthaarung -->
                         <div class="service-item reveal">
                             <div class="service-item-img"><img src="https://baldandbeards.com/wp-content/uploads/beard-waxing-768x512.jpg" alt="Honigwachs Gesichtsenthaarung in Berlin-Neukölln" loading="lazy" /></div>
                             <div class="service-item-text">
@@ -1762,16 +1840,16 @@
                 'nav.contact': 'Kontakt',
                 'nav.book': 'Termin anrufen',
                 'hero.eyebrow': 'Zeitlosen Stil kreieren',
-                'hero.title': 'Herrenfriseur &amp; Barbershop in <em>Berlin-Neukölln</em>',
+                'hero.title': 'Herrenfriseur & Barbershop in <em>Berlin-Neukölln</em>',
                 'hero.sub': 'Professionelle Herrenhaarschnitte, Skin Fades, Taper Fades, Bartpflege und traditionelle Rasuren in der Anzengruberstraße 4 in Berlin-Neukölln.',
                 'hero.btn': 'Jetzt anrufen',
                 'about.eyebrow': 'Über uns',
                 'about.title': 'Men\'s Cut by Taskin',
                 'about.p1': 'Seit 2013 in Berlin – wir sind leidenschaftliche Barbiere mit tiefer Expertise in allen Bereichen unseres Handwerks. Unser Erfolg kommt von jahrelanger Erfahrung mit einem vielfältigen Kundenkreis im Herzen Berlins.',
                 'about.p2': 'Wir sind bestrebt, alle unsere Kunden zufrieden zu stellen, indem wir aufmerksam zuhören und den besten Stil vorschlagen, der am besten zu Ihnen passt – zeitlose Barber-Tradition verbunden mit moderner Technik.',
-                'about.stat1': 'Bewertung',
-                'about.stat2': 'Bewertungen',
-                'about.stat3': 'Zufriedene Kunden',
+                'about.stat1': 'Google Rating',
+                'about.stat2': 'Google Rating',
+                'about.stat3': 'Google Rating',
                 'services.eyebrow': 'Unser Angebot',
                 'services.title': 'Barber-Leistungen',
                 'services.desc': 'Ein umfassendes Angebot an Barber-Dienstleistungen für Männer – von modernen Haarschnitten über traditionelle Rasuren bis hin zur Bartpflege, um Ihren Stil und Ihr Selbstbewusstsein zu unterstreichen.',
@@ -1781,9 +1859,9 @@
                 'services.shave.desc': 'Präzise Fade Cuts und Skin Fades mit sauberen Übergängen und exakten Konturen. Wir bieten unter anderem Low Fade, Mid Fade, High Fade und moderne Taper-Fade-Styles.',
                 'services.beard.title': 'Bartpflege & Bartkonturen',
                 'services.beard.desc': 'Professionelles Barttrimmen, Bartstyling und präzise Bartkonturen. Wir bringen den Bart passend zur Gesichtsform in Form und sorgen für ein sauberes, gepflegtes Ergebnis.',
-                'reviews.eyebrow': '100 % gute Bewertungen',
+                'reviews.eyebrow': 'Google Reviews',
                 'reviews.title': 'Kunden sagen',
-                'reviews.sub': '168 Google-Bewertungen',
+                'reviews.sub': 'Google Rating',
                 'reviews.r1.text': 'Absolute Sauberkeit im gesamten Laden.',
                 'reviews.r2.text': 'Das ist mein Stammfriseur in Neukölln. Ich war bisher immer sehr zufrieden.',
                 'reviews.r3.text': 'Sehr zufrieden. Tolle Bedienung, kurze Wartezeit und angemessener Preis.',
@@ -1816,9 +1894,9 @@
                 'about-page.values.v3.desc': 'Unsere 4,9-Sterne-Bewertung mit 168 Rezensionen spricht für sich. Jeder Besuch bietet den gleichen außergewöhnlichen Service, jedes Mal.',
                 'about-page.stats.eyebrow': 'Berlins Beste',
                 'about-page.stats.title': '4,9 ★ auf Google',
-                'about-page.stats.stat1': 'Durchschnittliche Bewertung',
-                'about-page.stats.stat2': 'Google-Bewertungen',
-                'about-page.stats.stat3': 'Zufriedene Kunden',
+                'about-page.stats.stat1': 'Google Rating',
+                'about-page.stats.stat2': 'Google Rating',
+                'about-page.stats.stat3': 'Google Rating',
                 'services-page.breadcrumb': 'Leistungen',
                 'services-page.hero.title': 'Unsere Leistungen',
                 'services-page.hero.sub': 'Haarschnitte & Rasuren für den modernen Gentleman',
@@ -1858,8 +1936,8 @@
                 'contact-page.hours.closed': 'Geschlossen',
                 'contact-page.follow': 'Folgen Sie uns',
                 'footer.brand': 'Men\'s Cut by Taskin',
-                'footer.brand_sub': 'Berlin · Deutschland',
-                'footer.desc': 'Vollservice-Barbershop & Herrenpflege in Berlin, Deutschland.',
+                'footer.brand_sub': 'Berlin-Neukölln · Deutschland',
+                'footer.desc': 'Herrenfriseur & Barbershop in Berlin-Neukölln.',
                 'footer.explore': 'Entdecken',
                 'footer.explore.home': 'Startseite',
                 'footer.explore.about': 'Über uns',
@@ -1867,7 +1945,7 @@
                 'footer.explore.contact': 'Kontakt',
                 'footer.contact': 'Kontakt',
                 'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
-                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlin · +49 30 68053010',
+                'footer.copyright': '© 2026 Men\'s Cut by Taskin · Berlin · +49 30 68053010',
                 'pricelist.eyebrow': 'Preisliste',
                 'pricelist.title': 'Unsere Preise',
                 'pricelist.desc': 'Faire und transparente Preise für alle unsere Dienstleistungen — hochwertige Pflege zu fairen Preisen.',
@@ -1881,7 +1959,7 @@
                 'pricelist.s3.desc': 'Erfrischende Haarwäsche gefolgt von einem stilvollen Haarschnitt und professionellem Föhnen.',
                 'pricelist.s3.price': '€18',
                 'pricelist.s4.title': 'Bart Rasur',
-                'pricelist.s4.desc': 'Sauberes und präzises Barttrimmen für ein scharfes und gepflegtes Erscheinungsbild.',
+                'pricelist.s4.desc': 'Professionelle Bartrasur mit sorgfältiger Vorbereitung, sauberen Konturen und angenehmem, gepflegtem Ergebnis.',
                 'pricelist.s4.price': '€12',
                 'pricelist.s5.title': 'Kinderhaarschnitt (bis 6 Jahre)',
                 'pricelist.s5.desc': 'Angenehmer und freundlicher Haarschnittservice, speziell für kleine Kinder entwickelt.',
@@ -1905,9 +1983,9 @@
                 'about.title': 'Men\'s Cut by Taskin',
                 'about.p1': 'Since 2013 in Berlin – we are passionate barbers with deep expertise in all aspects of our craft. Our success comes from years of experience working with a diverse clientele in the heart of Berlin.',
                 'about.p2': 'We are committed and determined to make all our clients happy through listening carefully and suggesting the best style that fits you most — combining timeless barbering tradition with contemporary technique.',
-                'about.stat1': 'Rating',
-                'about.stat2': 'Reviews',
-                'about.stat3': 'Happy Clients',
+                'about.stat1': 'Google Rating',
+                'about.stat2': 'Google Rating',
+                'about.stat3': 'Google Rating',
                 'services.eyebrow': 'What We\'re Offering',
                 'services.title': 'Barber Services',
                 'services.desc': 'A full range of men\'s barber services — from modern haircuts to traditional shaves and beard care, to emphasise your style and confidence.',
@@ -1917,9 +1995,9 @@
                 'services.shave.desc': 'Precise Fade Cuts and Skin Fades with clean transitions and exact contours. We offer Low Fade, Mid Fade, High Fade and modern Taper-Fade styles.',
                 'services.beard.title': 'Beard Care & Contours',
                 'services.beard.desc': 'Professional beard trimming, styling and precise contours. We shape the beard to suit the face shape and ensure a clean, well-groomed result.',
-                'reviews.eyebrow': '100% Good Reviews',
+                'reviews.eyebrow': 'Google Reviews',
                 'reviews.title': 'Customers Say&hellip;',
-                'reviews.sub': '168 Google Reviews',
+                'reviews.sub': 'Google Rating',
                 'reviews.r1.text': 'Absolute cleanliness throughout the entire store.',
                 'reviews.r2.text': 'This is my regular hairdresser in Neukölln. I\'ve always been very satisfied so far.',
                 'reviews.r3.text': 'Very happy. Great service, short wait, and reasonable price.',
@@ -1952,9 +2030,9 @@
                 'about-page.values.v3.desc': 'Our 4.9-star rating with 168 reviews speaks for itself. Every visit delivers the same exceptional standard of service, every time.',
                 'about-page.stats.eyebrow': 'Berlin\'s Best',
                 'about-page.stats.title': '4.9 ★ on Google',
-                'about-page.stats.stat1': 'Average Rating',
-                'about-page.stats.stat2': 'Google Reviews',
-                'about-page.stats.stat3': 'Happy Clients',
+                'about-page.stats.stat1': 'Google Rating',
+                'about-page.stats.stat2': 'Google Rating',
+                'about-page.stats.stat3': 'Google Rating',
                 'services-page.breadcrumb': 'Services',
                 'services-page.hero.title': 'Our Services',
                 'services-page.hero.sub': 'Haircuts & Shaves for the modern gentleman',
@@ -1994,8 +2072,8 @@
                 'contact-page.hours.closed': 'Closed',
                 'contact-page.follow': 'Follow Us',
                 'footer.brand': 'Men\'s Cut by Taskin',
-                'footer.brand_sub': 'Berlin · Germany',
-                'footer.desc': 'Full service barbershop & men\'s grooming in Berlin, Germany.',
+                'footer.brand_sub': 'Berlin-Neukölln · Germany',
+                'footer.desc': 'Herrenfriseur & Barbershop in Berlin-Neukölln.',
                 'footer.explore': 'Explore',
                 'footer.explore.home': 'Home',
                 'footer.explore.about': 'About Us',
@@ -2003,7 +2081,7 @@
                 'footer.explore.contact': 'Contact',
                 'footer.contact': 'Contact',
                 'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
-                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlin · +49 30 68053010',
+                'footer.copyright': '© 2026 Men\'s Cut by Taskin · Berlin · +49 30 68053010',
                 'pricelist.eyebrow': 'Price List',
                 'pricelist.title': 'Our Prices',
                 'pricelist.desc': 'Fair and transparent pricing for all our services — quality grooming at honest rates.',
@@ -2016,8 +2094,8 @@
                 'pricelist.s3.title': 'Wash, Haircut & Blow Dry',
                 'pricelist.s3.desc': 'Refreshing hair wash followed by a stylish haircut and professional blow dry.',
                 'pricelist.s3.price': '€18',
-                'pricelist.s4.title': 'Beard Trim',
-                'pricelist.s4.desc': 'Clean and precise beard trimming for a sharp and polished appearance.',
+                'pricelist.s4.title': 'Beard Shave',
+                'pricelist.s4.desc': 'Professional beard shave with careful preparation, clean contours and a comfortable, well-groomed result.',
                 'pricelist.s4.price': '€12',
                 'pricelist.s5.title': 'Kids Haircut (up to 6 years)',
                 'pricelist.s5.desc': 'Comfortable and friendly haircut service specially designed for young children.',
@@ -2041,9 +2119,9 @@
                 'about.title': 'مینز کٹ بائی تسکین',
                 'about.p1': '2013 سے برلن میں – ہم پرجوش باربرز ہیں جنہیں اپنے پیشے کے ہر پہلو میں گہری مہارت حاصل ہے۔ ہماری کامیابی برلن کے مرکز میں متنوع گاہکوں کے ساتھ برسوں کے تجربے سے حاصل ہوئی ہے۔',
                 'about.p2': 'ہم اپنے تمام گاہکوں کو خوش کرنے کے لیے پرعزم ہیں، ان کی بات غور سے سنتے ہیں اور بہترین اسٹائل تجویز کرتے ہیں جو آپ پر سب سے زیادہ فٹ بیٹھتا ہے — روایتی باربرنگ کو جدید تکنیک کے ساتھ ملاتے ہوئے۔',
-                'about.stat1': 'درجہ بندی',
-                'about.stat2': 'جائزے',
-                'about.stat3': 'خوش گاہک',
+                'about.stat1': 'گوگل ریٹنگ',
+                'about.stat2': 'گوگل ریٹنگ',
+                'about.stat3': 'گوگل ریٹنگ',
                 'services.eyebrow': 'ہماری پیشکش',
                 'services.title': 'باربر خدمات',
                 'services.desc': 'مردوں کے لیے باربر خدمات کی مکمل رینج — جدید ہیئر کٹس سے لے کر روایتی شیو اور داڑھی کی دیکھ بھال تک، تاکہ آپ کے اسٹائل اور اعتماد کو اجاگر کیا جا سکے۔',
@@ -2053,9 +2131,9 @@
                 'services.shave.desc': 'درست فیڈ کٹس اور سکن فیڈز صاف ٹرانزیشن اور درست کنٹورز کے ساتھ۔ ہم لو فیڈ، مڈ فیڈ، ہائی فیڈ اور جدید ٹیپر فیڈ اسٹائلز پیش کرتے ہیں۔',
                 'services.beard.title': 'داڑھی کی دیکھ بھال اور کنٹورز',
                 'services.beard.desc': 'پیشہ ورانہ داڑھی تراشنا، اسٹائلنگ اور درست کنٹورز۔ ہم داڑھی کو چہرے کی شکل کے مطابق شکل دیتے ہیں اور صاف، اچھی طرح سے تیار شدہ نتیجہ کو یقینی بناتے ہیں۔',
-                'reviews.eyebrow': '100٪ اچھے جائزے',
+                'reviews.eyebrow': 'گوگل جائزے',
                 'reviews.title': 'گاہک کہتے ہیں',
-                'reviews.sub': '168 گوگل جائزے',
+                'reviews.sub': 'گوگل ریٹنگ',
                 'reviews.r1.text': 'پوری دکان میں مکمل صفائی۔',
                 'reviews.r2.text': 'یہ نیوکولن میں میرا باقاعدہ حجام ہے۔ میں اب تک ہمیشہ بہت مطمئن رہا ہوں۔',
                 'reviews.r3.text': 'بہت خوش۔ زبردست سروس، کم انتظار، اور مناسب قیمت۔',
@@ -2088,9 +2166,9 @@
                 'about-page.values.v3.desc': '168 جائزوں کے ساتھ ہماری 4.9 اسٹار ریٹنگ خود بولتی ہے۔ ہر دورہ ہر بار معیار کی وہی غیر معمولی سطح فراہم کرتا ہے۔',
                 'about-page.stats.eyebrow': 'برلن کا بہترین',
                 'about-page.stats.title': 'گوگل پر 4.9 ★',
-                'about-page.stats.stat1': 'اوسط درجہ بندی',
-                'about-page.stats.stat2': 'گوگل جائزے',
-                'about-page.stats.stat3': 'خوش گاہک',
+                'about-page.stats.stat1': 'گوگل ریٹنگ',
+                'about-page.stats.stat2': 'گوگل ریٹنگ',
+                'about-page.stats.stat3': 'گوگل ریٹنگ',
                 'services-page.breadcrumb': 'خدمات',
                 'services-page.hero.title': 'ہماری خدمات',
                 'services-page.hero.sub': 'جدید شریف آدمی کے لیے ہیئر کٹس اور شیو',
@@ -2130,8 +2208,8 @@
                 'contact-page.hours.closed': 'بند',
                 'contact-page.follow': 'ہمیں فالو کریں',
                 'footer.brand': 'مینز کٹ بائی تسکین',
-                'footer.brand_sub': 'برلن · جرمنی',
-                'footer.desc': 'برلن، جرمنی میں مکمل سروس باربرشاپ اور مردوں کی گرومنگ۔',
+                'footer.brand_sub': 'برلن-نیوکولن · جرمنی',
+                'footer.desc': 'برلن-نیوکولن میں ہیرن فرائزر اور باربر شاپ۔',
                 'footer.explore': 'دریافت کریں',
                 'footer.explore.home': 'ہوم',
                 'footer.explore.about': 'ہمارے بارے میں',
@@ -2139,7 +2217,7 @@
                 'footer.explore.contact': 'رابطہ',
                 'footer.contact': 'رابطہ',
                 'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
-                'footer.copyright': '© 2024 مینز کٹ بائی تسکین · برلن · +49 30 68053010',
+                'footer.copyright': '© 2026 مینز کٹ بائی تسکین · برلن · +49 30 68053010',
                 'pricelist.eyebrow': 'قیمت کی فہرست',
                 'pricelist.title': 'ہماری قیمتیں',
                 'pricelist.desc': 'ہماری تمام خدمات کے لیے منصفانہ اور شفاف قیمتوں کا تعین — ایماندارانہ نرخوں پر معیاری گرومنگ۔',
@@ -2152,8 +2230,8 @@
                 'pricelist.s3.title': 'دھونا، ہیئر کٹ اور بلو ڈرائی',
                 'pricelist.s3.desc': 'تازگی بخش بال دھونا، اس کے بعد اسٹائلش ہیئر کٹ اور پیشہ ورانہ بلو ڈرائی۔',
                 'pricelist.s3.price': '€18',
-                'pricelist.s4.title': 'داڑھی تراشنا',
-                'pricelist.s4.desc': 'صاف اور درست داڑھی تراشنا ایک تیز اور چمکدار ظہور کے لیے۔',
+                'pricelist.s4.title': 'داڑھی کی شیو',
+                'pricelist.s4.desc': 'پیشہ ورانہ داڑھی شیو محتاط تیاری، صاف کنٹورز اور آرام دہ، اچھی طرح سے تیار شدہ نتیجہ کے ساتھ۔',
                 'pricelist.s4.price': '€12',
                 'pricelist.s5.title': 'بچوں کا ہیئر کٹ (6 سال تک)',
                 'pricelist.s5.desc': 'چھوٹے بچوں کے لیے خاص طور پر ڈیزائن کردہ آرام دہ اور دوستانہ ہیئر کٹ سروس۔',
@@ -2177,9 +2255,9 @@
                 'about.title': 'Men\'s Cut by Taskin',
                 'about.p1': 'Depuis 2013 à Berlin – nous sommes des barbiers passionnés avec une expertise approfondie dans tous les aspects de notre métier. Notre succès vient de années d\'expérience avec une clientèle diversifiée au cœur de Berlin.',
                 'about.p2': 'Nous nous engageons à rendre tous nos clients heureux en écoutant attentivement et en suggérant le meilleur style qui vous convient — alliant tradition du barbier intemporelle et technique contemporaine.',
-                'about.stat1': 'Évaluation',
-                'about.stat2': 'Avis',
-                'about.stat3': 'Clients satisfaits',
+                'about.stat1': 'Google Rating',
+                'about.stat2': 'Google Rating',
+                'about.stat3': 'Google Rating',
                 'services.eyebrow': 'Ce que nous offrons',
                 'services.title': 'Services de barbier',
                 'services.desc': 'Une gamme complète de services de barbier pour hommes — des coupes modernes aux rasages traditionnels et soins de la barbe, pour mettre en valeur votre style et votre confiance.',
@@ -2189,9 +2267,9 @@
                 'services.shave.desc': 'Coupes Fade précises et Skin Fades avec des transitions nettes et des contours exacts. Nous proposons Low Fade, Mid Fade, High Fade et des styles Taper-Fade modernes.',
                 'services.beard.title': 'Soin de la barbe & contours',
                 'services.beard.desc': 'Taille de barbe professionnelle, stylisme et contours précis. Nous mettons la barbe en forme selon la morphologie du visage et assurons un résultat propre et soigné.',
-                'reviews.eyebrow': '100% de bons avis',
+                'reviews.eyebrow': 'Google Reviews',
                 'reviews.title': 'Ce que disent les clients',
-                'reviews.sub': '168 avis Google',
+                'reviews.sub': 'Google Rating',
                 'reviews.r1.text': 'Propreté absolue dans tout le magasin.',
                 'reviews.r2.text': 'C\'est mon coiffeur régulier à Neukölln. J\'ai toujours été très satisfait jusqu\'à présent.',
                 'reviews.r3.text': 'Très satisfait. Excellent service, courte attente et prix raisonnable.',
@@ -2224,9 +2302,9 @@
                 'about-page.values.v3.desc': 'Notre note de 4,9 étoiles avec 168 avis parle d\'elle-même. Chaque visite offre le même niveau exceptionnel de service, à chaque fois.',
                 'about-page.stats.eyebrow': 'Le meilleur de Berlin',
                 'about-page.stats.title': '4,9 ★ sur Google',
-                'about-page.stats.stat1': 'Évaluation moyenne',
-                'about-page.stats.stat2': 'Avis Google',
-                'about-page.stats.stat3': 'Clients satisfaits',
+                'about-page.stats.stat1': 'Google Rating',
+                'about-page.stats.stat2': 'Google Rating',
+                'about-page.stats.stat3': 'Google Rating',
                 'services-page.breadcrumb': 'Services',
                 'services-page.hero.title': 'Nos services',
                 'services-page.hero.sub': 'Coupes et rasages pour le gentleman moderne',
@@ -2266,8 +2344,8 @@
                 'contact-page.hours.closed': 'Fermé',
                 'contact-page.follow': 'Suivez-nous',
                 'footer.brand': 'Men\'s Cut by Taskin',
-                'footer.brand_sub': 'Berlin · Allemagne',
-                'footer.desc': 'Salon de coiffure complet et soins masculins à Berlin, Allemagne.',
+                'footer.brand_sub': 'Berlin-Neukölln · Allemagne',
+                'footer.desc': 'Herrenfriseur & Barbershop in Berlin-Neukölln.',
                 'footer.explore': 'Explorer',
                 'footer.explore.home': 'Accueil',
                 'footer.explore.about': 'À propos',
@@ -2275,7 +2353,7 @@
                 'footer.explore.contact': 'Contact',
                 'footer.contact': 'Contact',
                 'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
-                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlin · +49 30 68053010',
+                'footer.copyright': '© 2026 Men\'s Cut by Taskin · Berlin · +49 30 68053010',
                 'pricelist.eyebrow': 'Liste des prix',
                 'pricelist.title': 'Nos tarifs',
                 'pricelist.desc': 'Des prix justes et transparents pour tous nos services — des soins de qualité à des tarifs honnêtes.',
@@ -2288,8 +2366,8 @@
                 'pricelist.s3.title': 'Lavage, coupe et brushing',
                 'pricelist.s3.desc': 'Lavage rafraîchissant suivi d\'une coupe stylée et d\'un brushing professionnel.',
                 'pricelist.s3.price': '€18',
-                'pricelist.s4.title': 'Taille de barbe',
-                'pricelist.s4.desc': 'Taille de barbe nette et précise pour une apparence soignée et élégante.',
+                'pricelist.s4.title': 'Rasage de barbe',
+                'pricelist.s4.desc': 'Rasage de barbe professionnel avec préparation minutieuse, contours nets et résultat confortable et soigné.',
                 'pricelist.s4.price': '€12',
                 'pricelist.s5.title': 'Coupe enfants (jusqu\'à 6 ans)',
                 'pricelist.s5.desc': 'Service de coupe confortable et convivial spécialement conçu pour les jeunes enfants.',
@@ -2313,9 +2391,9 @@
                 'about.title': 'Men\'s Cut by Taskin',
                 'about.p1': 'Desde 2013 en Berlín – somos barberos apasionados con una profunda experiencia en todos los aspectos de nuestro oficio. Nuestro éxito proviene de años de experiencia trabajando con una clientela diversa en el corazón de Berlín.',
                 'about.p2': 'Estamos comprometidos a hacer felices a todos nuestros clientes escuchando atentamente y sugiriendo el mejor estilo que más te favorece — combinando la tradición atemporal de la barbería con la técnica contemporánea.',
-                'about.stat1': 'Calificación',
-                'about.stat2': 'Reseñas',
-                'about.stat3': 'Clientes felices',
+                'about.stat1': 'Google Rating',
+                'about.stat2': 'Google Rating',
+                'about.stat3': 'Google Rating',
                 'services.eyebrow': 'Lo que ofrecemos',
                 'services.title': 'Servicios de barbería',
                 'services.desc': 'Una gama completa de servicios de barbería para hombres — desde cortes modernos hasta afeitados tradicionales y cuidado de barba, para resaltar tu estilo y confianza.',
@@ -2325,9 +2403,9 @@
                 'services.shave.desc': 'Cortes Fade precisos y Skin Fades con transiciones limpias y contornos exactos. Ofrecemos Low Fade, Mid Fade, High Fade y estilos Taper-Fade modernos.',
                 'services.beard.title': 'Cuidado de barba & contornos',
                 'services.beard.desc': 'Recorte de barba profesional, estilismo y contornos precisos. Damos forma a la barba según la forma del rostro y aseguramos un resultado limpio y bien cuidado.',
-                'reviews.eyebrow': '100% buenas reseñas',
+                'reviews.eyebrow': 'Google Reviews',
                 'reviews.title': 'Los clientes dicen',
-                'reviews.sub': '168 reseñas en Google',
+                'reviews.sub': 'Google Rating',
                 'reviews.r1.text': 'Limpieza absoluta en toda la tienda.',
                 'reviews.r2.text': 'Este es mi peluquero habitual en Neukölln. Siempre he estado muy satisfecho hasta ahora.',
                 'reviews.r3.text': 'Muy contento. Gran servicio, espera corta y precio razonable.',
@@ -2360,9 +2438,9 @@
                 'about-page.values.v3.desc': 'Nuestra calificación de 4.9 estrellas con 168 reseñas habla por sí sola. Cada visita ofrece el mismo nivel excepcional de servicio, en todo momento.',
                 'about-page.stats.eyebrow': 'Lo mejor de Berlín',
                 'about-page.stats.title': '4.9 ★ en Google',
-                'about-page.stats.stat1': 'Calificación promedio',
-                'about-page.stats.stat2': 'Reseñas en Google',
-                'about-page.stats.stat3': 'Clientes felices',
+                'about-page.stats.stat1': 'Google Rating',
+                'about-page.stats.stat2': 'Google Rating',
+                'about-page.stats.stat3': 'Google Rating',
                 'services-page.breadcrumb': 'Servicios',
                 'services-page.hero.title': 'Nuestros servicios',
                 'services-page.hero.sub': 'Cortes y afeitados para el caballero moderno',
@@ -2402,8 +2480,8 @@
                 'contact-page.hours.closed': 'Cerrado',
                 'contact-page.follow': 'Síguenos',
                 'footer.brand': 'Men\'s Cut by Taskin',
-                'footer.brand_sub': 'Berlín · Alemania',
-                'footer.desc': 'Barbería de servicio completo y cuidado masculino en Berlín, Alemania.',
+                'footer.brand_sub': 'Berlin-Neukölln · Alemania',
+                'footer.desc': 'Herrenfriseur & Barbershop in Berlin-Neukölln.',
                 'footer.explore': 'Explorar',
                 'footer.explore.home': 'Inicio',
                 'footer.explore.about': 'Sobre nosotros',
@@ -2411,7 +2489,7 @@
                 'footer.explore.contact': 'Contacto',
                 'footer.contact': 'Contacto',
                 'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
-                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlín · +49 30 68053010',
+                'footer.copyright': '© 2026 Men\'s Cut by Taskin · Berlín · +49 30 68053010',
                 'pricelist.eyebrow': 'Lista de precios',
                 'pricelist.title': 'Nuestros precios',
                 'pricelist.desc': 'Precios justos y transparentes para todos nuestros servicios — cuidado de calidad a precios honestos.',
@@ -2424,8 +2502,8 @@
                 'pricelist.s3.title': 'Lavado, corte y secado',
                 'pricelist.s3.desc': 'Lavado refrescante seguido de un corte con estilo y secado profesional.',
                 'pricelist.s3.price': '€18',
-                'pricelist.s4.title': 'Recorte de barba',
-                'pricelist.s4.desc': 'Recorte de barba limpio y preciso para una apariencia elegante y pulida.',
+                'pricelist.s4.title': 'Afeitado de barba',
+                'pricelist.s4.desc': 'Afeitado de barba profesional con preparación cuidadosa, contornos limpios y un resultado cómodo y bien cuidado.',
                 'pricelist.s4.price': '€12',
                 'pricelist.s5.title': 'Corte infantil (hasta 6 años)',
                 'pricelist.s5.desc': 'Servicio de corte cómodo y amigable especialmente diseñado para niños pequeños.',
@@ -2441,15 +2519,16 @@
 
         // ── FOOTER HTML ──
         function getFooterHTML() {
+            var year = new Date().getFullYear();
             return '<footer>' +
                 '<div class="container">' +
                 '  <div class="footer-grid">' +
                 '    <div class="footer-brand">' +
                 '      <div class="footer-logo">' +
                 '        <img src="' + LOGO_PATH + '" alt="Logo" />' +
-                '        <div class="footer-logo-text" data-i18n="footer.brand">Men\'s Cut by Taskin <span data-i18n="footer.brand_sub">Berlin &middot; Germany</span></div>' +
+                '        <div class="footer-logo-text" data-i18n="footer.brand">Men\'s Cut by Taskin <span data-i18n="footer.brand_sub">Berlin-Neukölln · Germany</span></div>' +
                 '      </div>' +
-                '      <p class="footer-desc" data-i18n="footer.desc">Full service barbershop men\'s grooming in Berlin, Germany.</p>' +
+                '      <p class="footer-desc" data-i18n="footer.desc">Herrenfriseur & Barbershop in Berlin-Neukölln.</p>' +
                 '      <div class="footer-social">' +
                 '        <a href="https://www.instagram.com/menscutbytaskin" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>' +
                 '        <a href="https://www.facebook.com/share/18b5GmeCER/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' +
@@ -2474,7 +2553,7 @@
                 '      </ul>' +
                 '    </div>' +
                 '  </div>' +
-                '  <div class="footer-bottom"><p data-i18n="footer.copyright">&copy; 2024 Men\'s Cut by Taskin &middot; Berlin &middot; +49 30 68053010</p></div>' +
+                '  <div class="footer-bottom"><p data-i18n="footer.copyright">© ' + year + ' Men\'s Cut by Taskin &middot; Berlin &middot; +49 30 68053010</p></div>' +
                 '</div>' +
                 '</footer>';
         }
