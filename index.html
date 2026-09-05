@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>Herrenfriseur & Barbershop Berlin-Neukölln | Men’s Cut by Taskin</title>
     <meta name="description" content="Men’s Cut by Taskin – Herrenfriseur & Barbershop in Berlin-Neukölln. Herrenhaarschnitt, Skin Fade, Taper Fade, Bartpflege, traditionelle Rasur und Kinderhaarschnitt." />
     <link rel="canonical" href="https://menscutbarber.de/" />
@@ -33,6 +33,7 @@
             color: var(--text);
             background: var(--white);
             overflow-x: hidden;
+            width: 100%;
         }
 
         /* ── NAVIGATION ── */
@@ -561,6 +562,8 @@
             transition: border-color .3s, transform .3s;
             display: flex;
             flex-direction: column;
+            min-width: 0;
+            word-break: break-word;
         }
         .review-card:hover {
             border-color: var(--gold);
@@ -571,6 +574,7 @@
             align-items: center;
             gap: 12px;
             margin-bottom: 14px;
+            flex-wrap: nowrap;
         }
         .reviewer-avatar {
             width: 44px;
@@ -586,11 +590,15 @@
         }
         .reviewer-info {
             flex: 1;
+            min-width: 0;
         }
         .reviewer-name {
             color: var(--dark);
             font-size: .85rem;
             font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .reviewer-date {
             color: var(--text-light);
@@ -619,6 +627,7 @@
             line-height: 1.8;
             font-style: normal;
             margin-bottom: 0;
+            word-break: break-word;
         }
         .reviews-header {
             display: flex;
@@ -699,6 +708,7 @@
             display: flex;
             gap: 12px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
         .social-btn {
             width: 44px;
@@ -809,6 +819,7 @@
             display: flex;
             gap: 10px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
         .footer-social a {
             width: 36px;
@@ -837,6 +848,7 @@
         .hours-table {
             width: 100%;
             border-collapse: collapse;
+            max-width: 100%;
         }
         .hours-table tr {
             border-bottom: 1px solid rgba(0, 0, 0, .07);
@@ -844,6 +856,7 @@
         .hours-table td {
             padding: 12px 0;
             font-size: .88rem;
+            word-break: break-word;
         }
         .hours-table td:first-child {
             font-weight: 600;
@@ -909,6 +922,7 @@
             gap: 60px;
             align-items: center;
             margin-bottom: 80px;
+            max-width: 100%;
         }
         .service-item.reverse {
             direction: rtl;
@@ -919,6 +933,7 @@
         .service-item-img {
             overflow: hidden;
             aspect-ratio: 4/3;
+            max-width: 100%;
         }
         .service-item-img img {
             width: 100%;
@@ -928,6 +943,9 @@
         }
         .service-item-img:hover img {
             transform: scale(1.05);
+        }
+        .service-item-text {
+            max-width: 100%;
         }
         .service-item-text h3 {
             font-family: 'Montserrat', sans-serif;
@@ -981,6 +999,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
+            max-width: 100%;
         }
 
         /* ── GALLERY SECTION ── */
@@ -998,6 +1017,7 @@
             border-radius: 8px;
             aspect-ratio: 1 / 1;
             position: relative;
+            max-width: 100%;
         }
         .gallery-item img {
             width: 100%;
@@ -1055,6 +1075,7 @@
             padding: 30px 24px;
             flex-direction: column;
             gap: 20px;
+            max-width: 100%;
         }
         .mobile-drawer.open {
             display: flex;
@@ -1127,7 +1148,8 @@
                 gap: 24px;
             }
             .reviews-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
             }
             .footer-grid {
                 grid-template-columns: 1fr;
@@ -1261,21 +1283,41 @@
                 margin: 0 0 8px 0;
             }
 
-            /* ── REVIEWS MOBILE ── */
+            /* ── REVIEWS MOBILE: HORIZONTAL SCROLL ── */
             .reviews-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 16px;
+                margin-top: 40px;
+                padding: 8px 4px 16px 4px;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+            }
+            .reviews-grid::-webkit-scrollbar {
+                height: 4px;
+                background: rgba(0,0,0,0.05);
+                border-radius: 4px;
+            }
+            .reviews-grid::-webkit-scrollbar-thumb {
+                background: var(--gold);
+                border-radius: 4px;
             }
             .review-card {
-                padding: 16px;
-                border-radius: 8px;
+                flex: 0 0 85%;
+                max-width: 85%;
+                scroll-snap-align: start;
+                padding: 20px 18px;
+                border-radius: 12px;
+                min-width: 0;
             }
             .reviewer-avatar {
-                width: 32px;
-                height: 32px;
+                width: 36px;
+                height: 36px;
             }
             .reviewer-name {
-                font-size: .7rem;
+                font-size: .75rem;
             }
             .reviewer-date {
                 font-size: .6rem;
@@ -1285,13 +1327,13 @@
                 height: 16px;
             }
             .review-stars {
-                font-size: .8rem;
-                margin-bottom: 6px;
+                font-size: .85rem;
+                margin-bottom: 8px;
                 letter-spacing: 1px;
             }
             .review-text {
-                font-size: .7rem;
-                line-height: 1.5;
+                font-size: .75rem;
+                line-height: 1.6;
             }
             .reviews-header {
                 flex-direction: row;
@@ -1307,6 +1349,16 @@
             }
             .reviews-header .stars {
                 font-size: 1rem;
+            }
+            /* prevent any horizontal overflow from reviews */
+            .reviews-section .container {
+                overflow: hidden;
+                padding: 0 16px;
+            }
+            .reviews-grid {
+                padding-right: 4px;
+                margin-left: 0;
+                margin-right: 0;
             }
 
             /* ── FOOTER MOBILE ── */
@@ -1362,6 +1414,8 @@
             }
             .container {
                 padding: 0 16px;
+                max-width: 100%;
+                overflow: hidden;
             }
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1406,67 +1460,6 @@
             body {
                 overflow-x: hidden;
                 width: 100%;
-            }
-            .container {
-                max-width: 100%;
-                overflow: hidden;
-            }
-            .hero-content {
-                max-width: 100%;
-            }
-            .pricelist-grid,
-            .reviews-grid,
-            .gallery-grid {
-                max-width: 100%;
-            }
-            .review-card {
-                word-break: break-word;
-            }
-            .footer-grid {
-                max-width: 100%;
-            }
-            .map-embed {
-                max-width: 100%;
-            }
-            .contact-page-grid {
-                max-width: 100%;
-            }
-            .services-grid {
-                max-width: 100%;
-            }
-            .value-grid {
-                max-width: 100%;
-            }
-            .stats-row {
-                max-width: 100%;
-                flex-wrap: wrap;
-            }
-            .about-grid {
-                max-width: 100%;
-            }
-            .contact-grid {
-                max-width: 100%;
-            }
-            nav {
-                max-width: 100%;
-                overflow: hidden;
-            }
-            .nav-logo {
-                flex-shrink: 1;
-                min-width: 0;
-            }
-            .nav-logo-text {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            .nav-logo-text span {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            .mobile-drawer {
-                max-width: 100%;
             }
             .hero {
                 max-width: 100%;
@@ -1525,6 +1518,49 @@
             }
             .social-row {
                 flex-wrap: wrap;
+            }
+            .contact-page-grid {
+                max-width: 100%;
+            }
+            .map-embed {
+                max-width: 100%;
+            }
+            .about-grid {
+                max-width: 100%;
+            }
+            .contact-grid {
+                max-width: 100%;
+            }
+            .services-grid {
+                max-width: 100%;
+            }
+            .value-grid {
+                max-width: 100%;
+            }
+            .stats-row {
+                max-width: 100%;
+                flex-wrap: wrap;
+            }
+            nav {
+                max-width: 100%;
+                overflow: hidden;
+            }
+            .nav-logo {
+                flex-shrink: 1;
+                min-width: 0;
+            }
+            .nav-logo-text {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .nav-logo-text span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .mobile-drawer {
+                max-width: 100%;
             }
         }
     </style>
