@@ -48,7 +48,7 @@
             height: 97px;
             border-bottom: 1px solid rgba(201, 162, 77, .2);
             transition: border-color .3s;
-            z-index: 100;
+            z-index: 1000;
         }
         .nav-logo {
             display: flex;
@@ -182,7 +182,7 @@
             min-width: 120px;
             padding: 6px 0;
             box-shadow: 0 12px 30px rgba(0, 0, 0, .6);
-            z-index: 200;
+            z-index: 9999;
         }
         .lang-dropdown.open {
             display: block;
@@ -1071,11 +1071,12 @@
             bottom: 0;
             background: rgba(15, 15, 15, .98);
             backdrop-filter: blur(8px);
-            z-index: 99;
+            z-index: 9998;
             padding: 30px 24px;
             flex-direction: column;
             gap: 20px;
             max-width: 100%;
+            overflow-y: auto;
         }
         .mobile-drawer.open {
             display: flex;
@@ -1191,6 +1192,7 @@
             nav {
                 height: 72px;
                 padding: 0 16px;
+                z-index: 10000;
             }
             .nav-logo img {
                 height: 48px;
@@ -1210,6 +1212,7 @@
             }
             .mobile-drawer {
                 top: 72px;
+                z-index: 9999;
             }
             .lang-btn {
                 padding: 4px 8px;
@@ -1221,6 +1224,9 @@
             }
             .nav-book-btn {
                 display: none;
+            }
+            .lang-dropdown {
+                z-index: 99999;
             }
 
             /* ── HERO MOBILE ── */
@@ -1543,7 +1549,7 @@
             }
             nav {
                 max-width: 100%;
-                overflow: hidden;
+                overflow: visible;
             }
             .nav-logo {
                 flex-shrink: 1;
